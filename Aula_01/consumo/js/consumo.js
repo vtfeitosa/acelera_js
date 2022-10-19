@@ -18,8 +18,13 @@ function fuelConsumption(){
 
     let pathPrice = ((pathTraveled) * parseFloat(fuelPrice.value));
 
+    let kmPrice = (pathPrice/pathTraveled);
+
+    console.log(kmPrice);
+
     consumption.innerHTML = ("Seu veículo percorre cerca de " + pathTraveled
         + " Km/Litro de " + fuelType.value + " consumido.</br>" + "O valor gasto de combustível com esse trajeto é R$"
-        + pathPrice + " reais.</br>");
+        + pathPrice + " reais.</br>" + "Abastecendo seu veículo com " + fuelType.value + " você gasta cerca de R$"
+        + kmPrice + " reais por Km percorrido.");
 
 }

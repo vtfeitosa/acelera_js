@@ -61,6 +61,6 @@ footer {
 
 }
 
-#fuelBox, #tankBox, #pathBox, #btnBox {
+#fuelBox, #tankBox, #pathBox, #btnBox, #priceBox {
     padding: 3.5%;
 }

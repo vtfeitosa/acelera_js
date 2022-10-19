@@ -21,7 +21,7 @@ function fuelConsumption(){
     
     let pathTraveled = (consumptionL).toFixed(2);
 
-    let pathPrice = ((pathTraveled) * parseFloat(fuelPrice.value));
+    let pathPrice = ((tankCapacity.value) * parseFloat(fuelPrice.value));
 
     let kmPrice = ((pathPrice)/path.value);
 

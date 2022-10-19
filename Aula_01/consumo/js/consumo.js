@@ -9,8 +9,13 @@ let tankCapacity = document.querySelector("#tankCapacity");
 
 let fuelPrice = document.querySelector("#fuelPrice");
 
+consumption = document.querySelector("#consumption");
+
+function skipLine() {
+    consumption.innerHTML +=("<br>");
+   }   
+   
 function fuelConsumption(){
-    console.log("oi");
 
     let consumptionL = (parseInt(path.value)/parseInt(tankCapacity.value));
     
@@ -22,9 +27,10 @@ function fuelConsumption(){
 
     console.log(kmPrice);
 
-    consumption.innerHTML = ("Seu veículo percorre cerca de " + pathTraveled
-        + " Km/Litro de " + fuelType.value + " consumido.</br>" + "O valor gasto de combustível com esse trajeto é R$"
-        + pathPrice + " reais.</br>" + "Abastecendo seu veículo com " + fuelType.value + " você gasta cerca de R$"
-        + kmPrice + " reais por Km percorrido.");
+    consumption.innerHTML = ("Seu veículo percorre cerca de " + pathTraveled + " Km/Litro de " + fuelType.value + " consumido.");
+    skipLine();
+    consumption.innerHTML += ("O valor gasto de combustível com esse trajeto é R$" + pathPrice + " reais.");
+    skipLine();
+    consumption.innerHTML += ("Abastecendo seu veículo com " + fuelType.value + " você gasta cerca de R$" + kmPrice + " reais por Km percorrido.");
 
 }

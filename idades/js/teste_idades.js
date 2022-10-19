@@ -9,6 +9,6 @@ let media = document.querySelector("#media");
 function averageAge(){
     let total = (parseInt(age_p1.value) + parseInt(age_p2.value) + parseInt(age_p3.value));
 
-    media.innerHTML = ("A média de idades das 3 pessoas é: " + ((total)/3));
+    media.innerHTML = ("A média de idades das 3 pessoas é: " + (Math.round((total)/3)));
  
 }

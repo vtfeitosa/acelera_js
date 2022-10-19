@@ -23,7 +23,7 @@ function fuelConsumption(){
 
     let pathPrice = ((pathTraveled) * parseFloat(fuelPrice.value));
 
-    let kmPrice = (pathPrice/pathTraveled);
+    let kmPrice = ((pathPrice)/path.value);
 
     console.log(kmPrice);
 

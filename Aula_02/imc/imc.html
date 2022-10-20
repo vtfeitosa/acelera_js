@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <!-- Name displayed in the browser tab -->
+        <title></title>
+
+        <link rel="stylesheet" href="" />
+    </head>
+
+    <body>
+        <!-- Top of the page -->
+        <!-- <header> 
+            <div class="development">
+                Developed by <a href="https://github.com/vtfeitosa" target="_blank">vtfeitosa</a>
+            </div>
+        </header> -->
+
+        <!-- Page content -->
+        <main>
+            <input placeholder="peso" id="weight">
+            <input placeholder="altura" id="height">
+            <button id="btn" onclick="exibirResultado()">Verificar</button>
+            <p id="result"></p>
+        </main>
+
+        <!-- Footer of the page -->
+        <!-- <footer>
+            <section class="footer_extra">
+                <p>So this page was developed as an activity of WEB Development Trail at Alpha EdTech, by the student <a href="https://www.linkedin.com/in/vtfeitosa/" target="_blank">Vitória Feitosa</a>.<br/> 
+                    All the code is being studied, patience... Thank you for understanding. :)                
+                </p>
+                <p>Last Update on 19 | October | 2022 </p>
+            </section>
+        </footer> -->
+
+        <script>
+
+            let result = document.querySelector("#result");
+
+            function exibirResultado(){
+                let weightInput = document.querySelector("#weight").value;
+                let heightInput = document.querySelector("#height").value;
+                
+                write("Seu índice de Massa Corporal é: " + imcCalc(weightInput, heightInput));
+                // O parâmetro que está sendo usado na linha acima está recebendo o conteúdo das 
+                //...variantes das linhas 43 e 44 que são os inputs de "peso" e "altura", captados no input do DOM
+                //...ou seja, o parâmetro weightInput está recebendo o input do "peso"(linha43) 
+                //...e usando esse input como parâmetro na função imcCalc
+                //...sendo assim: weightInput está sendo inserido como valor weight nessa função imcCalc
+
+            }
+
+            function imcCalc(weight, height){
+                //Essa função está usando um "peso" e "altura" para o cálculo, esses valores foram
+                //...atribuídos na linha 46 por parâmetros que capturam as linhas 43 e 44
+                let imc = weight / (height * height);
+                return imc;
+
+            }
+
+            //função tipo mostra da atv
+            function write(imcResult){
+                //Essa função escreve o imcResult dentro do elemento do DOM <p> indentificado pela #result, linha 25.
+
+                result.innerHTML = imcResult;
+                //imcResult é o parâmetro captado ao executar a função write(), que na linha 46 foi atribuído a uma frase.
+                //Ao executar a função na linha 46, o conteúdo inserido dentro do parâmetro, naquele momento que era a frase, se tornou o imcResult,
+                //...e esse conteúdo pode variar de acordo com oq for inserido no parâmetro ao usar a write(*oq inserir aqui vai se tornar o imcResult*)
+                skipLine();
+                result.innerHTML += ("oi");
+
+            }
+
+            //função tipo pulaLinha da atv
+            function skipLine(){
+                result.innerHTML += ("<br>");
+            }
+            
+        </script>
+
+    </body>
+</html>

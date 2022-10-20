@@ -102,7 +102,7 @@
             function write(text){
                 //Essa função escreve o text dentro do elemento do DOM <p> indentificado pela #result, linha 25.
 
-                result.innerHTML += text;
+                document.write(text);
                 //text é o parâmetro captado ao executar a função write(), que na linha 46 foi atribuído a uma frase.
                 //Ao executar a função na linha 46, o conteúdo inserido dentro do parâmetro, naquele momento que era a frase, se tornou o text,
                 //...e esse conteúdo pode variar de acordo com oq for inserido no parâmetro ao usar a write(*oq inserir aqui vai se tornar o text*)
@@ -111,7 +111,7 @@
 
             //função tipo pulaLinha da atv
             function skipLine(){
-                result.innerHTML += ("<br>");
+                document.write("<br>");
             }
 
 

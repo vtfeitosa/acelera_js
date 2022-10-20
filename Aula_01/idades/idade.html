@@ -24,6 +24,7 @@
             <button id="btn" onclick = "averageAge()">Calcular</button> -->
             
             <p id="media"></p>
+            <!-- <big id="mostra"></big> -->
             
         </main>
 
@@ -32,23 +33,39 @@
                 <p>So this page was developed as an activity of WEB Development Trail at Alpha EdTech, by the student <a href="https://www.linkedin.com/in/vtfeitosa/" target="_blank">Vitória Feitosa</a>.<br/> 
                     All the code is being studied, patience... Thank you for understanding. :)                
                 </p>
-                <p>Last Update on 18 | October | 2022 </p>
+                <p>Last Update on 19 | October | 2022 </p>
             </section>
         </footer>
 
         <script>
             "use strict"
 
+            let mediaNum = document.querySelector1  
+
             let eu = 25;
             let adriano = 26;
             let paulo = 32;
-            
+
+            let ano = 2022;
+
             let total = eu + adriano + paulo;
             let media = total/3;
             
-            console.log(total)
+            console.log(total);
             
-            document.write("A média de idade é" + Math.round(media));
+            function skipLine() {
+            document.write("<hr><br><hr>");
+            }  
+
+            function show(name){
+                document.write(`<big> ${name} </big>`)
+            }
+
+            show("Eu nasci em : " + (ano - 25));
+            skipLine();
+            show("Adriano nasceu em : " + (ano - 26));
+            skipLine();
+            show("Paulo nasceu em : " + (ano - 32));
             
         </script>
 

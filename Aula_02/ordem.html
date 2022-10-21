@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <!-- Name displayed in the browser tab -->
+        <title>Funções</title>
+
+        <link rel="stylesheet" href="" />
+    </head>
+
+    <body>
+        <main>
+        </main>
+    </body>
+    <script>
+        function primeira(){
+            console.log("1 - antes");
+            segunda();
+            console.log("1 - depois");
+        }
+        function segunda(){
+            console.log("2 - antes");
+            terceira();
+            console.log("2 - depois");
+        }
+        function terceira(){
+            console.log("3");
+        }
+
+        primeira();
+
+    </script>
+</html>

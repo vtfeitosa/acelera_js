@@ -11,15 +11,19 @@ function writeContent(content){
 let ageInput = prompt("Quantos anos você tem?");
 
 function daysLivedCalc(age){
-    let ageNum = age * 365;
-    return ageNum ;
+    let ageDays = age * 365;
+    return ageDays ;
 }
 
 let daysLived = daysLivedCalc(ageInput);
 
-let heartRate = (daysLived*(24*(60*80)));
+function heartRateCalc(rate){
+    let heartRateNum = (daysLived*(24*(60*80)));
+    return heartRateNum ;
+}
+
+let heartRate = heartRateCalc()
 
 writeContent("Você já viveu " + daysLived + " dias de vida!");
 skipLine();
 writeContent("E seu coração já bateu " + heartRate + " vezes. Haja Coração!")
-console.log(heartRate);

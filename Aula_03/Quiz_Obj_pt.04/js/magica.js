@@ -11,4 +11,4 @@ function writeContent(content){
     box.innerHTML = (content);
 }
 
-writeContent(`<h1>Minha página</h1> <input placeholder="TESTE" ></input>`);
+writeContent(`<h1>Minha página, modificada por JavaScript</h1> <input placeholder="TESTE" ></input>`);

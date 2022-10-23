@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="//fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,700&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin,latin-ext,vietnamese"
+            rel="stylesheet"
+            nonce=""
+        />
+        <link
+            href="//fonts.googleapis.com/css?family=Google+Sans:400,500&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin,latin-ext,vietnamese"
+            rel="stylesheet"
+            nonce=""
+        />
+        <link rel="stylesheet" href="styles/index.css" />
+        <title>Google Keep Clone</title>
+    </head>
+    <body>
+        <header>
+            <h1 class="logo">Notas</h1>
+            <div class="header-actions">
+                <div class="pesquisa">
+                    <div class="pesquisa-input-container">
+                        <input type="text" class="pesquisa-input" />
+                    </div>
+                    <button
+                        class="pesquisa-pesquisar botao-icone botao-icone-40"
+                    >
+                        <span class="icone-24 icone-lupa"></span>
+                    </button>
+                    <button class="pesquisa-close botao-icone botao-icone-40">
+                        <span class="icone-24 icone-x"></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <div class="header-filling"></div>
+        <section class="main">
+            <nav>
+                <button class="link-pagina-notas">
+                    <span class="icone-24 icone-lampada"></span>
+                    <span>Notas</span>
+                </button>
+                <div class="nav-tags-list"></div>
+                <button>
+                    <span class="icone-24 icone-lapis"></span>
+                    <span>Editar tags</span>
+                </button>
+                <button class="link-pagina-lixeira">
+                    <span class="icone-24 icone-lixeira"></span>
+                    <span>Lixeira</span>
+                </button>
+            </nav>
+            <main>
+                <section class="form-card input-principal">
+                    <div class="card-nota">
+                        <div class="card-nota-titulo">
+                            <input placeholder="Escreva uma nota..." />
+                            <!-- tabindex: https://stackoverflow.com/questions/5192859/how-to-ignore-html-element-from-tabindex -->
+                            <button
+                                class="pin botao-icone botao-icone-34"
+                                tabindex="-1"
+                            >
+                                <span class="icone-24 icone-pin"></span>
+                            </button>
+                        </div>
+                        <div
+                            contenteditable="true"
+                            class="card-nota-corpo"
+                            placeholder="Escreva uma nota..."
+                            oninput="if(this.innerText === '\n') this.innerHTML = '';"
+                        ></div>
+                        <div class="card-nota-tags">
+                            <div class="nota-tag">
+                                <button class="nota-tag-nome">
+                                    <span>a</span>
+                                </button>
+                                <button class="nota-tag-remover">
+                                    <span class="icone-14 icone-x"></span>
+                                </button>
+                            </div>
+
+                            <div class="nota-tag">
+                                <button class="nota-tag-nome">
+                                    <span>livros</span>
+                                </button>
+                                <button class="nota-tag-remover">
+                                    <span class="icone-14 icone-x"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-botoes">
+                        <button class="botao-fechar">Fechar</button>
+                        <div class="ferramentas">
+                            <button
+                                class="botao-icone botao-icone-34 botao-trocar-cor"
+                            >
+                                <span
+                                    class="icone-18 icone-paleta-cores"
+                                ></span>
+                            </button>
+                            <button
+                                class="botao-icone botao-icone-34 botao-editar-tags"
+                            >
+                                <span class="icone-18 icone-lapis"></span>
+                            </button>
+                            <button
+                                class="botao-icone botao-icone-34 botao-mover-lixeira"
+                            >
+                                <span class="icone-18 icone-lixeira"></span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <section class="esvaziar-lixeira oculto">
+                    <button>Esvaziar Lixeira</button>
+                </section>
+                <section class="cards-list">
+                    <div class="card">
+                        <div class="card-nota">
+                            <div class="card-nota-titulo">
+                                <input placeholder="Título" value="Titulo 1" />
+                                <button
+                                    class="pin botao-icone botao-icone-34"
+                                    tabindex="-1"
+                                >
+                                    <span class="icone-24 icone-pin"></span>
+                                </button>
+                            </div>
+                            <div
+                                contenteditable="true"
+                                class="card-nota-corpo"
+                                placeholder="Nota"
+                                oninput="if(this.innerText === '') this.innerHTML = '';"
+                            >
+                                corpo 1
+                            </div>
+                            <div class="card-nota-tags">
+                            </div>
+                        </div>
+                        <div class="card-botoes">
+                            <div class="ferramentas">
+                                <button
+                                    class="botao-icone botao-icone-34 botao-trocar-cor"
+                                >
+                                    <span
+                                        class="icone-18 icone-paleta-cores"
+                                    ></span>
+                                </button>
+                                <button
+                                    class="botao-icone botao-icone-34 botao-editar-tags"
+                                >
+                                    <span class="icone-18 icone-lapis"></span>
+                                </button>
+                                <button
+                                    class="botao-icone botao-icone-34 botao-mover-lixeira"
+                                >
+                                    <span class="icone-18 icone-lixeira"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </section>
+        <section class="modal-card oculto">
+            <div class="form-card">
+                <div class="card-nota">
+                    <div class="card-nota-titulo">
+                        <input placeholder="Título" />
+                        <!-- tabindex: https://stackoverflow.com/questions/5192859/how-to-ignore-html-element-from-tabindex -->
+                        <button
+                            class="pin botao-icone botao-icone-34"
+                            tabindex="-1"
+                        >
+                            <span class="icone-24 icone-pin"></span>
+                        </button>
+                    </div>
+                    <div
+                        contenteditable="true"
+                        class="card-nota-corpo"
+                        placeholder="Nota"
+                        oninput="if(this.innerText === '\n') this.innerHTML = '';"
+                    ></div>
+                    <div class="card-nota-tags">
+                        <div class="nota-tag">
+                            <button class="nota-tag-nome">
+                                <span>a</span>
+                            </button>
+                            <button class="nota-tag-remover">
+                                <span class="icone-14 icone-x"></span>
+                            </button>
+                        </div>
+
+                        <div class="nota-tag">
+                            <button class="nota-tag-nome">
+                                <span>livros</span>
+                            </button>
+                            <button class="nota-tag-remover">
+                                <span class="icone-14 icone-x"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-botoes">
+                    <div class="ferramentas">
+                        <button
+                            class="botao-icone botao-icone-34 botao-trocar-cor"
+                        >
+                            <span class="icone-18 icone-paleta-cores"></span>
+                        </button>
+                        <button
+                            class="botao-icone botao-icone-34 botao-editar-tags"
+                        >
+                            <span class="icone-18 icone-lapis"></span>
+                        </button>
+                        <button
+                            class="botao-icone botao-icone-34 botao-mover-lixeira"
+                        >
+                            <span class="icone-18 icone-lixeira"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="modal-tags oculto">
+            <div class="form-tags">
+                <div class="form-tags-editor">
+                    <h1>Editar tags</h1>
+                    <section class="nova-tag">
+                        <button
+                            class="botao-icone botao-icone-26 botao-limpar-input"
+                        >
+                            <span class="icone-18 icone-x"></span>
+                        </button>
+                        <input type="text" placeholder="Criar nova tag" />
+                        <button
+                            class="botao-icone botao-icone-26 botao-criar-tag"
+                        >
+                            <span class="icone-18 icone-cheque"></span>
+                        </button>
+                    </section>
+                    <div class="editar-tag-erro oculto">Tag já existe</div>
+                    <div class="form-tags-editor-tags">
+                        <section>
+                            <button class="botao-icone botao-icone-26">
+                                <span
+                                    class="icone-18 icone-bandeira-opaco"
+                                ></span>
+                            </button>
+                            <button
+                                class="botao-icone botao-icone-26 botao-deletar-tag"
+                            >
+                                <span
+                                    class="icone-18 icone-lixeira-opaco"
+                                ></span>
+                            </button>
+                            <input
+                                type="text"
+                                placeholder="Insira o nome da tag"
+                                value="TROQUEME"
+                            />
+                            <button
+                                class="botao-icone botao-icone-26 botao-finalizar-editar-tag"
+                            >
+                                <span class="icone-18 icone-cheque"></span>
+                            </button>
+                            <button
+                                class="botao-icone botao-icone-26 botao-iniciar-editar-tag"
+                            >
+                                <span class="icone-18 icone-lapis-opaco"></span>
+                            </button>
+                        </section>
+                    </div>
+                </div>
+                <div class="form-tags-botoes">
+                    <button>Feito</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="popover-tags oculto">
+            <h1>Tags da nota</h1>
+            <section class="pesquisa-container">
+                <input type="text" placeholder="Insira o nome da nota" />
+                <button class="botao-icone botao-icone-18">
+                    <span class="icone-14 icone-lupa"></span>
+                </button>
+            </section>
+        </section>
+    </body>
+    <script src="./scripts/index.js" type="module"></script>
+</html>

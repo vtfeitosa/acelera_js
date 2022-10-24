@@ -3,7 +3,8 @@ import { btnActive} from "./activateButton.js";
 //Captura os elementos do dom para o innerHTML
 const btnNotes = document.querySelector(".link-pagina-notas");
 const btnBooks = document.querySelector(".link-pagina-livros");
-const btnEdit = document.querySelector("section nav button:nth-of-type(3)");
+const btnTasks = document.querySelector(".link-pagina-afazeres");
+const btnEdit = document.querySelector("section nav button:nth-of-type(2)");
 const btnTrash = document.querySelector(".link-pagina-lixeira");
 
 //Selecionando os botões e atribuindo a cada um, o evento "click" para executar
@@ -13,6 +14,9 @@ btnNotes.addEventListener("click" , ()=>{
 } );
 btnBooks.addEventListener("click" , ()=>{
     btnSelected("books");
+});
+btnTasks.addEventListener("click" , ()=>{
+    btnSelected("tasks");
 });
 btnEdit.addEventListener("click" , ()=>{
     btnSelected("edit");

@@ -2,7 +2,7 @@ import {noteTemplate} from "./templates.js"
 
 //Captura os elementos do dom para o innerHTML
 const btnNotes = document.querySelector(".link-pagina-notas");
-const btnLivros = document.querySelector(".link-pagina-livros");
+const btnBooks = document.querySelector(".link-pagina-livros");
 const btnEdit = document.querySelector("section nav button:nth-of-type(3)");
 const btnTrash = document.querySelector(".link-pagina-lixeira");
 
@@ -44,19 +44,29 @@ export function btnActive(btnName){
     if (btnName === "notes"){
         titleBox.innerHTML = "Notas";
         btnNotes.classList.add("active");
+        btnBooks.classList.remove("active");
         btnEdit.classList.remove("active");
         btnTrash.classList.remove("active");
         addCard();
     
+    }if (btnName === "books"){
+        titleBox.innerHTML = "Livros";
+        btnNotes.classList.remove("active");
+        btnBooks.classList.add("active");
+        btnEdit.classList.remove("active");
+        btnTrash.classList.remove("active");
+    
     }if (btnName === "edit"){
         titleBox.innerHTML = "Editar Tags";
         btnNotes.classList.remove("active");
+        btnBooks.classList.remove("active");
         btnEdit.classList.add("active");
         btnTrash.classList.remove("active");
     
     }if (btnName === "trash"){
         titleBox.innerHTML = "Lixeira";
         btnNotes.classList.remove("active");
+        btnBooks.classList.remove("active");
         btnEdit.classList.remove("active");
         btnTrash.classList.add("active");
     }

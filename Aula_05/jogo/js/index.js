@@ -29,21 +29,32 @@ return numSorteado;
 let playerNumber = prompt("Já pensei. Qual você acha que é? (Entre 0 e 100)");
 
 //Compara o número sorteado pela máquina e o número escolhido pelo usuário
-if(playerNumber == numSorteadoInt){
-    //Se o jogador acertar o número que a máquina sorteou
-    writePageContent("Uau! Você acertou, eu também pensei no número " + numSorteadoInt);
+if (isNaN(playerNumber)){
+    //Se for isNan for "true", significa que o valor preenchido não foi um número,
+    //... e aí dá o erro e pede para recarregar a página
+    writePageContent("ERRO! Recarregue a página e insira um número válido.")
 
-}else if(playerNumber != numSorteadoInt){
-    //Se o jogador errar o número que a máquina sorteou
-    writePageContent("Você errou! Eu tinha pensado no " + numSorteadoInt);
-
-    //Vai ser feita outra comparação se era > ou < 
-    if(playerNumber < numSorteadoInt){
-        skipLine();
-        writePageContent( "O número que eu sorteei era MAIOR que o escolhido por você!");
-
-    }else if(playerNumber > numSorteadoInt){
-        skipLine();
-        writePageContent( "O número que eu sorteei era MENOR que o escolhido por você!");
-    }   
+}else {
+    //se a função aterior responder "false", signtifica que é um número e aí executa
+    //...as funções das linhas a seguir, fazendo mais comparações:
+    if(playerNumber == numSorteadoInt){
+        //Se o jogador acertar o número que a máquina sorteou
+        writePageContent("Uau! Você acertou, eu também pensei no número " + numSorteadoInt);
+    
+    }else if(playerNumber != numSorteadoInt){
+        //Se o jogador errar o número que a máquina sorteou
+        writePageContent("Você errou! Eu tinha pensado no " + numSorteadoInt);
+    
+        //Vai ser feita outra comparação se era > ou < 
+        if(playerNumber < numSorteadoInt){
+            skipLine();
+            writePageContent( "O número que eu sorteei era MAIOR que o escolhido por você!");
+    
+        }else if(playerNumber > numSorteadoInt){
+            skipLine();
+            writePageContent( "O número que eu sorteei era MENOR que o escolhido por você!");
+        }   
+    }
 }
+
+

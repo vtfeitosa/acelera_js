@@ -28,8 +28,17 @@ if(playerNumber == numberDrawn){
     //Se o jogador acertar o número que a máquina sorteou
     writePageContent("Uau! Você acertou, eu também pensei no número " + numberDrawn);
 
-}else{
+}else if(playerNumber != numberDrawn){
     //Se o jogador errar o número que a máquina sorteou
     writePageContent("Você errou! Eu tinha pensado no " + numberDrawn);
 
+    //Vai ser feita outra comparação se era > ou < 
+    if(playerNumber < numberDrawn){
+        skipLine();
+        writePageContent( "O número que eu sorteei era MAIOR que o escolhido por você!");
+
+    }else if(playerNumber > numberDrawn){
+        skipLine();
+        writePageContent( "O número que eu sorteei era MENOR que o escolhido por você!");
+    }   
 }

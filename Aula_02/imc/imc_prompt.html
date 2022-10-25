@@ -63,27 +63,31 @@
             function imcLevelCalc(imcNum){
                 //Essa função recebe o imcNum como parâmetro que foi declarado quando a função foi executada na linha 56, ou seja, 
                 //... o imcNum tem o mesmo conteúdo/valor do imcResult, e essa função abaixo compara com os dados reais do IMC e exibe um resultado variável
-
-                    if (imcNum < 18.5){
-                        return "Magreza";
+                
+                if (imcNum < 18.5){
+                        return "Resultado: Magreza - Seu IMC indica que você está ABAIXO do peso.";
 
                     }else if ((18.5 < imcNum) && (imcNum < 24.9)){
                         //Na linha acima, estou usando duas comparações, por isso o &&. Com isso eu comparo se o resultado dos dois calculos são verdadeiros
-                        //... e se sim, aí a função atribui o retorno ao resultado da função imcLevelCalc, se for falso, pula para executar o if da linha seguinte.
-                        return "Normal";
+                        //... e se sim, aí a função manda o retorno como resultado da função imcLevelCalc, se for falso, pula para executar o if da linha seguinte.
+                        return "Resultado: Normal - Seu IMC indica que você está no peso adequado para sua altura.";
 
                     }else if ((25 < imcNum) && (imcNum < 29.9)){
-                        return "Sobrepeso";
+                        return "Resultado: Sobrepeso - Seu IMC indica que você está ACIMA do peso.";
                         
                     }else if ((30 < imcNum) && (imcNum < 34.5)){
-                        return "Obesidade grau I";
+                        return "Resultado: Obesidade grau I - Seu IMC indica que você está ACIMA do peso.";
                         
                     }else if ((35 < imcNum) && (imcNum < 39.9)){
-                        return "Obesidade grau II";
+                        return "Resultado: Obesidade grau II - Seu IMC indica que você está ACIMA do peso.";
+                        
+                    }else if (isNaN(imcNum) == true){
+                        //Essa parte não tem comparação nenhuma, pq se o resultado de todas as linhas anteriores for falso, o resultado vai ser esse return mesmo.
+                        return "Recarregue a página e insira um número válido";
                         
                     }else {
                         //Essa parte não tem comparação nenhuma, pq se o resultado de todas as linhas anteriores for falso, o resultado vai ser esse return mesmo.
-                        return "Obesidade grau III";
+                        return "Resultado: Obesidade grau III - Seu IMC indica que você está ACIMA do peso.";
                         
                     }
                 

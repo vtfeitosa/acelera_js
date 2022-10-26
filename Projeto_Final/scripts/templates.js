@@ -19,11 +19,8 @@ return `<div class="card">
         >
             corpo 1
         </div>
-        <div class="card-nota-tags">
-            ${tag}
-        </div>
+        <div class="card-nota-tags">${tag}</div>
     </div>
-
     <div class="card-botoes">
         <div class="ferramentas">
             <button

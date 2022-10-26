@@ -1,31 +1,31 @@
-import { btnActive} from "./activateButton.js";
+import { btnActivator} from "./activateButton.js";
 
 //Captura os elementos do dom para o innerHTML
 const btnNotes = document.querySelector(".link-pagina-notas");
 const btnBooks = document.querySelector(".link-pagina-livros");
 const btnTasks = document.querySelector(".link-pagina-afazeres");
-const btnEdit = document.querySelector("section nav button:nth-of-type(2)");
+const btnEdit = document.querySelector("section nav > button:nth-child(3)");
 const btnTrash = document.querySelector(".link-pagina-lixeira");
+const inputBox = document.querySelector("section.form-card.input-principal");
 
 //Selecionando os botões e atribuindo a cada um, o evento "click" para executar
 //...gerar uma variável que será o parâmetro de funções executadas a seguir.
 btnNotes.addEventListener("click" , ()=>{
-    btnSelected("notes");
+    btnActivator("notes");
 } );
 btnBooks.addEventListener("click" , ()=>{
-    btnSelected("books");
+    btnActivator("books");
 });
 btnTasks.addEventListener("click" , ()=>{
-    btnSelected("tasks");
+    btnActivator("tasks");
 });
 btnEdit.addEventListener("click" , ()=>{
-    btnSelected("edit");
+    btnActivator("edit");
 });
 btnTrash.addEventListener("click" , ()=>{
-    btnSelected("trash");
+    btnActivator("trash");
 });
 
-//Quando o botão for selecionado, executar a função de "ativação" em scripts/activateButton.js(linha33)
-function btnSelected(btnName){
-    btnActive(btnName);
-}
+inputBox.addEventListener("click" , ()=>{
+    inputBox.classList.add("focus");
+});

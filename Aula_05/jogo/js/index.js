@@ -41,7 +41,7 @@ if (isNaN(playerNumber)){
         //Se o jogador acertar o número que a máquina sorteou
         writePageContent("Uau! Você acertou, eu também pensei no número " + numSorteadoInt);
     
-    }else if(playerNumber != numSorteadoInt){
+    }else{
         //Se o jogador errar o número que a máquina sorteou
         writePageContent("Você errou! Eu tinha pensado no " + numSorteadoInt);
     

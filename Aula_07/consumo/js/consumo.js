@@ -53,7 +53,7 @@ writePageContent(`
         <label>Capacidade do Tanque:<input id="tankCapacity" placeholder="Litros"></label>
     </div>
     <div id="btnBox">
-        <button id="btn" onclick="readInput(path.value,tankCapacity.value,fuelPrice.value)">Calcular</button>
+        <button id="btn" onclick="readInput()">Calcular</button>
     </div>
 </div>
 <p id="result"></p>
@@ -61,21 +61,22 @@ writePageContent(`
 
 //////////////
 
-//Capturando Inputs
-let fuelType = document.querySelector("#fuelType");
-let path = document.querySelector("#path");
-let tankCapacity = document.querySelector("#tankCapacity");
-let fuelPrice = document.querySelector("#fuelPrice");
-
-//Elemento do dom onde vai ser "impresso" o resultado
-let result = document.querySelector("#result");
    
 //Função que lê o valor do input e converte para número inteiro
-function readInput(pathInput , tankCapacityInput , fuelPriceInput){
-    let pathInp = (Number(pathInput));
-    let tankInp = (Number(tankCapacityInput));
-    let fuelPriceInp = (Number(fuelPriceInput));
-    console.log(pathInp)
+function readInput(){
+
+    //Elemento do dom onde vai ser "impresso" o resultado
+    let result = document.querySelector("#result");
+
+    //Capturando Inputs
+    let fuelType = document.querySelector("#fuelType");
+    let path = document.querySelector("#path");
+    let tankCapacity = document.querySelector("#tankCapacity");
+    let fuelPrice = document.querySelector("#fuelPrice");
+
+    let pathInp = (Number(path.value));
+    let tankInp = (Number(tankCapacity.value));
+    let fuelPriceInp = (Number(fuelPrice.value));
 
     let pathTraveled = ((pathInp/tankInp).toFixed(2));
     let pathPrice = (tankInp * fuelPriceInp);

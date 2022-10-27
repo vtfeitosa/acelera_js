@@ -10,57 +10,15 @@
     </head>
 
     <body>
-        <!-- Top of the page -->
-        <header> 
-            <div class="development">
-                Developed by <a href="https://github.com/vtfeitosa" target="_blank">vtfeitosa</a>
-            </div>
-        </header>
+
+         <!-- Top of the page -->
+         <header class="development"></header>
 
         <!-- Page content -->
-        <main>
-            <h1>Álcool ou Gasolina?</h1>
-            <p>Se você ainda fica na dúvida sobre o consumo de combustíveldo seu veículo, faça já o teste! </br>
-                Preencha os dados, e verifique qual o nível do consumo de acordo com o combustível usado.
-            </p>
-            <div id="calcBox">
-                <div id="fuelBox">
-                    <select id="fuelType">
-                        <option selected disabled>-- Selecione um Combustível --</option>
-                        <option value="Álcool" class="alc">Álcool</option>
-                        <option value="Gasolina" class="gas">Gasolina</option>
-                    </select>
-                </div>
-                <div id="priceBox">
-                    <label>Valor do Litro de Combustível:</label></br>
-                    <input id="fuelPrice" placeholder="BRL - Reais">
-                </div>
-                <div id="pathBox">
-                    <label>Percurso percorrido:</label></br>
-                    <input id="path" placeholder="Km">
-                </div>
-                <div id="tankBox">
-                    <label>Capacidade do Tanque:</label></br>
-                    <input id="tankCapacity" placeholder="Litros">
-                </div>
-                <div id="btnBox">
-                    <button id="btn" onclick="fuelConsumption()">Calcular</button>
-                </div>
-            </div>
-            
-            <p id="consumption"></p>
-
-        </main>
+        <main id="pageMainContent"></main>
 
         <!-- Footer of the page -->
-        <footer>
-            <section class="footer_extra">
-                <p>So this page was developed as an activity of WEB Development Trail at Alpha EdTech, by the student <a href="https://www.linkedin.com/in/vtfeitosa/" target="_blank">Vitória Feitosa</a>.<br/> 
-                    All the code is being studied, patience... Thank you for understanding. :)                
-                </p>
-                <p>Last Update on 19 | October | 2022 </p>
-            </section>
-        </footer>
+        <footer></footer>
 
         <script src="./js/consumo.js"></script>
 

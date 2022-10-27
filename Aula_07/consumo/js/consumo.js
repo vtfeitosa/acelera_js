@@ -53,7 +53,7 @@ writePageContent(`
         <label>Capacidade do Tanque:<input id="tankCapacity" placeholder="Litros"></label>
     </div>
     <div id="btnBox">
-        <button id="btn" onclick="fuelConsumption()">Calcular</button>
+        <button id="btn" onclick="readInput(path.value,tankCapacity.value,fuelPrice.value)">Calcular</button>
     </div>
 </div>
 <p id="result"></p>
@@ -70,16 +70,21 @@ let fuelPrice = document.querySelector("#fuelPrice");
 //Elemento do dom onde vai ser "impresso" o resultado
 let result = document.querySelector("#result");
    
-function fuelConsumption(){
+//Função que lê o valor do input e converte para número inteiro
+function readInput(pathInput , tankCapacityInput , fuelPriceInput){
+    let pathInp = (Number(pathInput));
+    let tankInp = (Number(tankCapacityInput));
+    let fuelPriceInp = (Number(fuelPriceInput));
+    console.log(pathInp)
 
-    //Calcula o consumo em litros pelo trajeto percorrido
-    let pathTraveled = ((parseInt(path.value)/parseInt(tankCapacity.value)).toFixed(2));
-    let pathPrice = ((tankCapacity.value) * parseInt(fuelPrice.value));
-    let kmPrice = (((pathPrice)/path.value).toFixed(2));
+    let pathTraveled = ((pathInp/tankInp).toFixed(2));
+    let pathPrice = (tankInp * fuelPriceInp);
+    let kmPrice = (((pathPrice)/pathInp).toFixed(2));
 
     result.innerHTML += ("Seu veículo percorre cerca de " + pathTraveled + " Km/Litro de " + fuelType.value + " consumido.");
     skipLine();
     result.innerHTML += ("O valor gasto de combustível com esse trajeto é R$" + pathPrice + " reais.");
     skipLine();
     result.innerHTML += "Abastecendo seu veículo com " + fuelType.value + " você gasta cerca de R$" + kmPrice + " por Km percorrido.";
+
 }

@@ -52,10 +52,15 @@ footer {
     text-align: center;
 }
 
-.ageBox, #btnBox{
+.calcBox {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
 
-    margin: 5%;
+    justify-content: right;
+    align-items: flex-end;
+
+}
+
+#fuelBox, #tankBox, #pathBox, #btnBox, #priceBox {
+    padding: 3.5%;
 }

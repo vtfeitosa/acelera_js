@@ -61,9 +61,9 @@ let Year = 2022;
 
 function averageAge(){
     let total = (parseInt(age_p1.value) + parseInt(age_p2.value) + parseInt(age_p3.value));
-    
+
     result.innerText = ("A média de idades das 3 pessoas é: ");
     skipLine();
-    result.innerHTML += (Math.round((total)/3));
+    result.innerText += (Math.round((total)/3));
 
 }

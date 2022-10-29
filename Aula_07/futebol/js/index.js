@@ -86,7 +86,6 @@ function showResult() {
   result.innerText += (comparando(ptFinal, ptFinalAdv));
 
   const divResult = document.getElementById("divResult");
-  console.log(divResult)
 
   if (ptFinal < ptFinalAdv) {
     divResult.style.color  = "red";

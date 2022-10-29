@@ -5,7 +5,7 @@ const contentBox = document.querySelector("#pageMainContent");
 //Função para pular linha
 
 function skipLine() {
-  contentBox.innerHTML += "</br>";
+    result.innerHTML += "</br>";
 }
 
 //Função para escrever um determinado conteúdo na página
@@ -31,7 +31,9 @@ writePageContent(`
         </div>
     </div>
     <button onclick="showResult()">Calcular</button>
-    <p id="result"></p>
+    <div id="divResult">
+        <p id="result"></p>
+    </div>
 `);
 
 let vitoriasInp = document.querySelector("#vitoriasInp");
@@ -40,8 +42,6 @@ let derrotasInp = document.querySelector("#derrotasInp");
 let vitoriasAdversarioInp = document.querySelector("#vitoriasAdversarioInp");
 let empatesAdversarioInp = document.querySelector("#empatesAdversarioInp");
 let derrotasAdversarioInp = document.querySelector("#derrotasAdversarioInp");
-
-const result = document.querySelector("#result");
 
 /////////////////////////////
 
@@ -56,8 +56,10 @@ function calcPontos(vitorias, empates, derrotas) {
 function comparando(ptFinalNum, ptFinalAdvNum) {
   if (ptFinalNum < ptFinalAdvNum) {
     return `Nosso time está indo PIOR que o Time Adversário :(`;
+
   } else if (ptFinalNum > ptFinalAdvNum) {
     return `Nosso time está indo MELHOR que o Time Adversário hihihi `;
+    
   } else if (ptFinalNum === ptFinalAdvNum) {
     return `Nosso time está EMPATADO com o Time Adversário `;
   }
@@ -74,10 +76,25 @@ function showResult() {
     empatesAdversarioInp.value,
     derrotasAdversarioInp.value
   );
+  const result = document.querySelector("#result");
+  result.innerHTML = "";
 
-  writePageContent(`Nosso time fez ${ptFinal} pontos!`);
+  result.innerText += `Nosso time fez ${ptFinal} pontos!`;
   skipLine();
-  writePageContent(`O time adversário fez ${ptFinalAdv} pontos`);
+  result.innerText += `O time adversário fez ${ptFinalAdv} pontos`;
   skipLine();
-  writePageContent(comparando(ptFinal, ptFinalAdv));
+  result.innerText += (comparando(ptFinal, ptFinalAdv));
+
+  const divResult = document.getElementById("divResult");
+  console.log(divResult)
+
+  if (ptFinal < ptFinalAdv) {
+    divResult.style.color  = "red";
+
+  } else if (ptFinal > ptFinalAdv) {
+    divResult.style.color = "green";
+    
+  } else if (ptFinal === ptFinalAdv) {
+    divResult.style.color  = "black";
+  }
 }

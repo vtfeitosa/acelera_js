@@ -26,7 +26,7 @@ headerBox.innerHTML = (`
 footerBox.innerHTML = (`
 <section class="footer_extra">
 <p>So this page was developed as an activity of WEB Development Trail at Alpha EdTech, by the student <a href="https://www.linkedin.com/in/vtfeitosa/" target="_blank">Vitória Feitosa</a>.<br/> All the code is being studied, patience... Thank you for understanding. :) </p>
-<p>Last Update on Day | Month | 2022 </p>
+<p>Last Update on 02 | November | 2022 </p>
 </section>
 `);
 

@@ -41,17 +41,17 @@ let anoDeCopa = parseInt(
 //Para escrever os anos que tem copa, contando apenas até o limite
 function calc() {
   while (anoDeCopa <= anoLimite) {
-    writePageContent(anoDeCopa + " tem copa!");
+    writePageContent(anoDeCopa + " teve Olimpíada!");
     anoDeCopa = anoDeCopa + 4;
     skipLine();
   }
 }
 
 //Conferir se os capos estão preenchidos com anos válidos
-if (anoDeCopa < 1930) {
+if (anoDeCopa < 1986) {
   //Se não,Pedir para recarregar e inserir novamente
   writePageContent(
-    `Ops...A Copa do Mundo só rolou a partir de 1930 rsrs Que tal recarregar a página e digitar algum ano seguinte a esse?`
+    `Ops...As Olimpíadas só rolaram a partir de 1986 rsrs Que tal recarregar a página e digitar algum ano seguinte a esse?`
   );
 } else {
   //se sim, captar o próximo parâmentro

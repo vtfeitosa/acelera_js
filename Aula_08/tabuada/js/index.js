@@ -32,17 +32,18 @@ footerBox.innerHTML = (`
 
 ////////////////////////////
 
+let num = prompt("Com que número vc deseja fazer a tabuada do 10?");
 
 let multiplo = 1;
 let result = "";
 
-function calc(){
-   result = 7 * multiplo
+function calc(numero){
+   result = numero * multiplo
    return result
 }
 
-while(multiplo < 10 ){
-    writePageContent(`7 vezes ${multiplo} é igual a ${calc()}`);
+while(multiplo <= 10 ){
+    writePageContent(`${num} vezes ${multiplo} é igual a ${calc(num)}`);
     skipLine();
     multiplo++
 }

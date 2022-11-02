@@ -32,22 +32,47 @@ footerBox.innerHTML = (`
 
 ////////////////////////////
 
-let anoDeCopa = 1930;
-let anoLimite = prompt("Descubra em que anos seguintes averá copa! Digite um ano limite para comparação.");
+let anoLimite = ""
+let result = ""
+let anoDeCopa = parseInt(prompt("Você gostaria de começar a contagem a partir de que ano?"));
 
-if (anoLimite < anoDeCopa){
+//Para escrever os anos que tem copa, contando apenas até o limite
+function calc(){
+
+    while(anoDeCopa <= anoLimite){
+        writePageContent(anoDeCopa + " tem copa!");
+        anoDeCopa = anoDeCopa + 4;
+        skipLine();
+        
+    }
+}
+
+//Conferir se os capos estão preenchidos com anos válidos
+if(anoDeCopa < 1930){
+    //Se não,Pedir para recarregar e inserir novamente
     writePageContent(`Ops...A Copa do Mundo só rolou a partir de 1930 rsrs Que tal recarregar a página e digitar algum ano seguinte a esse?`)
 
-}
+}else {
+    //se sim, captar o próximo parâmentro
+    anoLimite = parseInt(prompt("Descubra em que anos seguintes haverá copa! Digite um ano limite para comparação."));
 
-while(anoDeCopa <= anoLimite){
-    writePageContent(anoDeCopa + " tem copa!");
-    anoDeCopa = anoDeCopa + 4;
-    skipLine();
-}
+    if(anoLimite < anoDeCopa){
+    //se for um ano inválido...
+    writePageContent(`Ops...Você precisa digitar um ano seguinte ao ano do início da contagem(${anoDeCopa}). Que tal recarregar a página e digitar algum ano seguinte a esse?`)
 
-if (anoDeCopa < 1927 ){
-    skipLine();
-    writePageContent(`Ufa! Esses foram os anos de copa até ${anoLimite}.`)
+    }else{
+    //se for um ano válido, executar a função para calcular entre esses anos
+    calc();
 
+    }
+
+    //Atribuindo ao Result o ultimo valor que anoLimite teve; 
+    result = anoLimite;
+
+   if(anoLimite >= result){
+    //Para quando o ano limite for maior ou igual a ele mesmo, imprimir a mensagem de finalização.
+    writePageContent(`Ufa! Esses foram os anos de copa até ${anoLimite}`);
+   }
+
+    
 }

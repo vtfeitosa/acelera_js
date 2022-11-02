@@ -26,19 +26,28 @@ headerBox.innerHTML = (`
 footerBox.innerHTML = (`
 <section class="footer_extra">
 <p>So this page was developed as an activity of WEB Development Trail at Alpha EdTech, by the student <a href="https://www.linkedin.com/in/vtfeitosa/" target="_blank">Vitória Feitosa</a>.<br/> All the code is being studied, patience... Thank you for understanding. :) </p>
-<p>Last Update on Day | Month | 2022 </p>
+<p>Last Update on 02 | November | 2022 </p>
 </section>
 `);
 
 ////////////////////////////
 
 let anoDeCopa = 1930;
+let anoLimite = prompt("Descubra em que anos seguintes averá copa! Digite um ano limite para comparação.");
 
-while(anoDeCopa <= 2100){
+if (anoLimite < anoDeCopa){
+    writePageContent(`Ops...A Copa do Mundo só rolou a partir de 1930 rsrs Que tal recarregar a página e digitar algum ano seguinte a esse?`)
+
+}
+
+while(anoDeCopa <= anoLimite){
     writePageContent(anoDeCopa + " tem copa!");
     anoDeCopa = anoDeCopa + 4;
     skipLine();
 }
 
-skipLine();
-writePageContent(`Ufa! Esses foram os anos de copa até 2100.`)
+if (anoDeCopa < 1927 ){
+    skipLine();
+    writePageContent(`Ufa! Esses foram os anos de copa até ${anoLimite}.`)
+
+}

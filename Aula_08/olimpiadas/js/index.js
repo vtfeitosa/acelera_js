@@ -76,6 +76,6 @@ if (anoDeCopa < 1986) {
 
   if (anoLimite >= result) {
     //Para quando o ano limite for maior ou igual a ele mesmo, imprimir a mensagem de finalização.
-    writePageContent(`Ufa! Esses foram os anos de copa até ${anoLimite}`);
+    writePageContent(`Ufa! Esses foram os anos de Olimíadas até ${anoLimite}`);
   }
 }

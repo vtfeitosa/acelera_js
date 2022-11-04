@@ -26,7 +26,7 @@ headerBox.innerHTML = (`
 footerBox.innerHTML = (`
 <section class="footer_extra">
 <p>So this page was developed as an activity of WEB Development Trail at Alpha EdTech, by the student <a href="https://www.linkedin.com/in/vtfeitosa/" target="_blank">Vitória Feitosa</a>.<br/> All the code is being studied, patience... Thank you for understanding. :) </p>
-<p>Last Update on 02 | November | 2022 </p>
+<p>Last Update on 04 | November | 2022 </p>
 </section>
 `);
 
@@ -34,16 +34,9 @@ footerBox.innerHTML = (`
 
 let num = prompt("Com que número vc deseja fazer a tabuada do 10?");
 
-let multiplo = 1;
-let result = "";
+let multiplo = "";
 
-function calc(numero){
-   result = numero * multiplo
-   return result
-}
-
-while(multiplo <= 10 ){
-    writePageContent(`${num} vezes ${multiplo} é igual a ${calc(num)}`);
+for (multiplo = 1 ; multiplo <= 10 ; multiplo++){
+    writePageContent(`${num} vezes ${multiplo} é igual a ${num * multiplo}`);
     skipLine();
-    multiplo++
 }

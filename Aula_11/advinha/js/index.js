@@ -44,28 +44,32 @@ function compare(){
     numInp = (document.querySelector("#num"));
 
     while(sorteados.length < 6){
-        sorteados.push(Math.round(Math.random()*100));
+        sorteados.push(Math.round(Math.random()*60));
     }
 
-    console.log(sorteados);
+    let acertou = false;
 
-    let num1 = Number(sorteados[0]);
-    let num2 = Number(sorteados[1]);
-    let num3 = Number(sorteados[2]);
-    let num4 = Number(sorteados[3]);
-    let num5 = Number(sorteados[4]);
-    let num6 = Number(sorteados[5]);
+    for(let i=0 ; i < sorteados.length ; i++ ){
 
-    if( num1 === (Number(numInp.value))|num2 === (Number(numInp.value))|num3 === (Number(numInp.value))|
-        num4 === (Number(numInp.value))|num5 === (Number(numInp.value))|num6 === (Number(numInp.value))){
+        if(sorteados[i] === Number(numInp.value)){
+            acertou = true;
+
+        }
+
+    }
+
+    if(acertou === true){
         alert(`Parabéns! Você acertou um dos números secretos :) (Número: ${numInp.value}) `);
-        return;
 
     }else{
         alert("Infelizmente você errou :(");
 
     }
 
+    console.log(acertou);
+    console.log(sorteados);
+
     numInp.value = "";
 
+    sorteados = [];
 }

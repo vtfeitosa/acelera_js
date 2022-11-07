@@ -38,19 +38,34 @@ writePageContent(`
 );
 
 let numInp = "";
-let sorteado = "";
+let sorteados = [];
 
 function compare(){
-    sorteado = Math.round(Math.random()*100);
-    numInp = document.querySelector("#num");
-    numInp.value = "";
+    numInp = (document.querySelector("#num"));
 
-    if(sorteado === (Number(numInp.value))){
-        alert("Parabéns! Você acertou o número secreto");
+    while(sorteados.length < 6){
+        sorteados.push(Math.round(Math.random()*100));
+    }
+
+    console.log(sorteados);
+
+    let num1 = Number(sorteados[0]);
+    let num2 = Number(sorteados[1]);
+    let num3 = Number(sorteados[2]);
+    let num4 = Number(sorteados[3]);
+    let num5 = Number(sorteados[4]);
+    let num6 = Number(sorteados[5]);
+
+    if( num1 === (Number(numInp.value))|num2 === (Number(numInp.value))|num3 === (Number(numInp.value))|
+        num4 === (Number(numInp.value))|num5 === (Number(numInp.value))|num6 === (Number(numInp.value))){
+        alert(`Parabéns! Você acertou um dos números secretos :) (Número: ${numInp.value}) `);
+        return;
 
     }else{
-        alert("Infelizmente você errou!");
+        alert("Infelizmente você errou :(");
 
     }
-    
+
+    numInp.value = "";
+
 }

@@ -116,8 +116,7 @@ function transformaEmArray(st1,st2,st3){
 
 transformaEmArray(1,2,3);
 
-
-let arrayGroup = [1,5,9,21];
+let arrayGroup = [1,5,9,21,22];
 
 function verificaPontas(array){
 
@@ -147,4 +146,43 @@ function returnIntegersArray(){
 
 }
 
+
+let arrayGroup2 = [1,5,9,21,22];
+
 returnIntegersArray();
+
+function indexOf(array, num){
+    
+    for(let position = 0; position < array.length ; position++){
+
+        if(num === array[position]){
+            return " posição no array: [" + position + "]";
+        }
+
+    }
+
+    return -1;
+    
+}
+
+console.log(indexOf(arrayGroup2,9));
+
+
+function imprimirImpares(array){
+
+    let arrayImpares = [];
+    let num = 1
+
+    for(let position = 0; position < array.length ; position++){
+
+        if(array[position] % 2 != 0 ){
+            arrayImpares.push(array[position]);
+        }
+
+    }
+
+    console.log(arrayImpares);
+    
+}
+
+imprimirImpares(arrayGroup2);
